@@ -1,0 +1,17 @@
+{
+    "name": "morrelinko/data-transformer",
+    "description": "Transforms from one data form to another",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laju Morrison",
+            "email": "morrelinko@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Morrelinko\\DataTransformer\\": ["src"]
+        }
+    }
+}

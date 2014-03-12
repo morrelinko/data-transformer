@@ -7,38 +7,27 @@ use Morrelinko\DataTransformer\Type\JsonType;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+$data = file_get_contents('./sample.json');
+
 $transformer = new Transformer(
     new JsonType(),
     new ArrayType()
 );
 
-$data = file_get_contents('./facebook-page-album-photos.json');
 $builder = new CollectionBuilder();
+
+// For each item in collection, map 'name' to 'full_name'
 $builder
-    ->map('id')
-    ->map('name', 'title')->remove('name')
-    ->map('type')
-    ->map('description')
-    ->map('cover_photo')
-    ->map('privacy')
-    ->map('photos.data', 'photos')->collection('photos', function (CollectionBuilder $builder) {
-        $builder
-            ->map('name', 'caption')->remove('name')
-            ->map('created_time', 'created_at')->remove('created_time')
-            ->remove('album');
+    ->map('name', 'full_name')
+    ->collection('friends', function (CollectionBuilder $builder) {
+        // Go into the friends collection
+        // map every 'name' item to 'full_name' then remove 'name' item
+        $builder->map('name', 'full_name')->remove('name');
     });
 
 $out = $transformer->transform($data, $builder);
 
 $content = "<?php\r\n\r\nreturn " . var_export($out, true);
-file_put_contents('facebook-page-album-photos.php', $content);
+//file_put_contents('sample.php', $content);
 
 echo '<pre>' . print_r($out, true) . '</pre>';
-
-?>
-
-<form method="post">
-    <label>
-        <textarea name=""></textarea>
-    </label>
-</form>

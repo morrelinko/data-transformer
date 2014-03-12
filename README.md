@@ -91,3 +91,37 @@ array(
 );
 
 ```
+
+Converting from JSON to Serialize Form
+
+```php
+<?php
+
+use Morrelinko\DataTransformer\Transformer;
+use Morrelinko\DataTransformer\Type\JsonType;
+use Morrelinko\DataTransformer\Type\SerializeType;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$data = '{
+        "id": 0,
+        "guid": "d66bac58-06a0-498d-9692-8fd186549887",
+        "isActive": false,
+        "balance": "$3,547.00",
+        "picture": "http://placehold.it/32x32",
+        "age": 30,
+        "name": "Leola Orr",
+        "gender": "female",
+        "company": "Satiance",
+        "email": "leolaorr@satiance.com",
+        "phone": "+1 (907) 468-3394",
+        "address": "229 Belmont Avenue, Smeltertown, Delaware, 9835"
+}';
+
+$transformer = new Transformer(
+    $from = new JsonType(),
+    $to = new SerializeType()
+);
+
+$output = $transformer->transform($data);
+var_dump($output);

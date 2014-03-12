@@ -35,7 +35,7 @@ $transformer = new Transformer(
     $to = new ArrayType()
 );
 
-$output = $transformer->transform($data);
+$output = $transformer->transform($json);
 var_export($output);
 
 // Output
@@ -81,7 +81,7 @@ $builder
     ->map('picture', 'photo')->remove('picture')
     ->map('name', 'full_name')->remove('name');
 
-$output = $transformer->transform($data, $builder);
+$output = $transformer->transform($json, $builder);
 var_export($output);
 
 // Output

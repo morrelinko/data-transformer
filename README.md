@@ -17,9 +17,9 @@ This tool also includes a Builder to normalize the response from facebook APIs..
 ```php
 <?php
 
-use Morrelinko\DataTransformer\Transformer;
-use Morrelinko\DataTransformer\Type\ArrayType;
-use Morrelinko\DataTransformer\Type\JsonType;
+use Morrelinko\Datran\Transformer;
+use Morrelinko\Datran\Type\ArrayType;
+use Morrelinko\Datran\Type\JsonType;
 
 $json = '{
     "id": 0,
@@ -55,10 +55,10 @@ array(
 ```php
 <?php
 
-use Morrelinko\DataTransformer\Builder\ItemBuilder;
-use Morrelinko\DataTransformer\Transformer;
-use Morrelinko\DataTransformer\Type\ArrayType;
-use Morrelinko\DataTransformer\Type\JsonType;
+use Morrelinko\Datran\Builder\ItemBuilder;
+use Morrelinko\Datran\Transformer;
+use Morrelinko\Datran\Type\ArrayType;
+use Morrelinko\Datran\Type\JsonType;
 
 $json = '{
     "id": 0,
@@ -103,9 +103,9 @@ Converting from JSON to Serialize Form
 ```php
 <?php
 
-use Morrelinko\DataTransformer\Transformer;
-use Morrelinko\DataTransformer\Type\JsonType;
-use Morrelinko\DataTransformer\Type\SerializeType;
+use Morrelinko\Datran\Transformer;
+use Morrelinko\Datran\Type\JsonType;
+use Morrelinko\Datran\Type\SerializeType;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

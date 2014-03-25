@@ -1,9 +1,9 @@
 <?php
 
-use Morrelinko\DataTransformer\Builder\CollectionBuilder;
-use Morrelinko\DataTransformer\Transformer;
-use Morrelinko\DataTransformer\Type\ArrayType;
-use Morrelinko\DataTransformer\Type\JsonType;
+use Morrelinko\Datran\Builder\CollectionBuilder;
+use Morrelinko\Datran\Transformer;
+use Morrelinko\Datran\Type\ArrayType;
+use Morrelinko\Datran\Type\JsonType;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -17,14 +17,15 @@ $transformer = new Transformer(
 $builder = new CollectionBuilder();
 
 // For each item in collection, map 'name' to 'full_name'
+/**/
 $builder
+    ->map('id', 'user_id')->remove('id')
+    ->map('about', 'description')
     ->map('name', 'full_name')
     ->collection('friends', function (CollectionBuilder $builder) {
-        // Go into the friends collection
-        // map every 'name' item to 'full_name' then remove 'name' item
         $builder->map('name', 'full_name')->remove('name');
     });
-
+/**/
 $out = $transformer->transform($data, $builder);
 
 $content = "<?php\r\n\r\nreturn " . var_export($out, true);

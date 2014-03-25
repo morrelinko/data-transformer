@@ -1,6 +1,6 @@
 <?php
 
-namespace Morrelinko\DataTransformer\Builder;
+namespace Morrelinko\Datran\Builder;
 
 /**
  * @author Laju Morrison <morrelinko@gmail.com>

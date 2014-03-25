@@ -1,9 +1,9 @@
 <?php
 
-namespace Morrelinko\DataTransformer;
+namespace Morrelinko\Datran;
 
-use Morrelinko\DataTransformer\Builder\Builder;
-use Morrelinko\DataTransformer\Type\TypeInterface;
+use Morrelinko\Datran\Builder\Builder;
+use Morrelinko\Datran\Type\TypeInterface;
 
 /**
  * @author Laju Morrison <morrelinko@gmail.com>
@@ -34,7 +34,7 @@ class Transformer
 
     /**
      * @param $input
-     * @param \Morrelinko\DataTransformer\Builder\Builder $builder
+     * @param \Morrelinko\Datran\Builder\Builder $builder
      * @return mixed
      */
     public function transform($input, Builder $builder = null)

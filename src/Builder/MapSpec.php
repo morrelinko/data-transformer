@@ -1,8 +1,8 @@
 <?php
 
-namespace Morrelinko\DataTransformer\Builder;
+namespace Morrelinko\Datran\Builder;
 
-use Morrelinko\DataTransformer\Toolbox\ArrayUtils;
+use Morrelinko\Datran\Toolbox\ArrayUtils;
 
 /**
  * @author Laju Morrison <morrelinko@gmail.com>

@@ -11,6 +11,10 @@ class MapSpec implements SpecInterface
 {
     public function __construct($find, $key)
     {
+        if (!$key) {
+            $key = $find;
+        }
+
         $this->find = $find;
         $this->key = $key;
     }

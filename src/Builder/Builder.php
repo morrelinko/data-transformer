@@ -16,32 +16,27 @@ abstract class Builder
 
     public function remove($key)
     {
-        $this->specs[] = new RemoveSpec($key);
-
-        return $this;
+        return $this->addSpec(new RemoveSpec($key));
     }
 
     public function map($find, $key = null)
     {
-        if (!$key) {
-            $key = $find;
-        }
-
-        $this->specs[] = new MapSpec($find, $key);
-
-        return $this;
+        return $this->addSpec(new MapSpec($find, $key));
     }
 
     public function item($key, $callback)
     {
-        $this->specs[] = new ItemSpec($key, $callback);
-
-        return $this;
+        return $this->addSpec(new ItemVisitor($key, $callback));
     }
 
     public function collection($key, $callback)
     {
-        $this->specs[] = new CollectionSpec($key, $callback);
+        return $this->addSpec(new CollectionVisitor($key, $callback));
+    }
+
+    public function addSpec(SpecInterface $spec)
+    {
+        $this->specs[] = $spec;
 
         return $this;
     }

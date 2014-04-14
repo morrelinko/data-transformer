@@ -5,7 +5,7 @@ namespace Morrelinko\Datran\Builder;
 /**
  * @author Laju Morrison <morrelinko@gmail.com>
  */
-class ItemSpec implements SpecInterface
+class CollectionVisitor implements SpecInterface
 {
     /**
      * @param int|string $key
@@ -19,7 +19,7 @@ class ItemSpec implements SpecInterface
 
     public function apply(&$input)
     {
-        $builder = new ItemBuilder();
+        $builder = new CollectionBuilder();
         call_user_func($this->callback, $builder);
         $builder->build($input[$this->key]);
     }

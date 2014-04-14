@@ -33,6 +33,22 @@ class Transformer
     }
 
     /**
+     * @param TypeInterface $type
+     */
+    public function setFromType(TypeInterface $type)
+    {
+        $this->fromType = $type;
+    }
+
+    /**
+     * @param TypeInterface $type
+     */
+    public function setToType(TypeInterface $type)
+    {
+        $this->toType = $type;
+    }
+
+    /**
      * @param $input
      * @param \Morrelinko\Datran\Builder\Builder $builder
      * @return mixed

@@ -1,0 +1,15 @@
+{
+    "name": "John Doe",
+    "friends": [
+        {
+            "name": "Alice"
+        },
+        {
+            "name": "Peter"
+        }
+    ],
+    "address": {
+        "id": "235465342",
+        "title": "Hebert Macaulay, 232"
+    }
+}

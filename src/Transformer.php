@@ -50,7 +50,7 @@ class Transformer
 
     /**
      * @param $input
-     * @param \Morrelinko\Datran\Builder\Builder $builder
+     * @param  \Morrelinko\Datran\Builder\Builder $builder
      * @return mixed
      */
     public function transform($input, Builder $builder = null)

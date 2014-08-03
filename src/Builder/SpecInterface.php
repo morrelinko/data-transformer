@@ -9,4 +9,3 @@ interface SpecInterface
 {
     public function apply(&$input);
 }
- 

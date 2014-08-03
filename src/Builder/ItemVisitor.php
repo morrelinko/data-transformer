@@ -9,7 +9,7 @@ class ItemVisitor implements SpecInterface
 {
     /**
      * @param int|string $key
-     * @param \Closure $callback
+     * @param \Closure   $callback
      */
     public function __construct($key, $callback)
     {
